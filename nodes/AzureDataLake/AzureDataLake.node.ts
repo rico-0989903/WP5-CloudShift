@@ -3,7 +3,8 @@ import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 export class AzureDataLake implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Azure Data Lake',
-		name: 'azureDataLake',
+		name: 'AzureDataLake',
+		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
 		icon: 'file:azureDataLake.png',
 		group: ['transform'],
 		version: 1,
@@ -16,7 +17,7 @@ export class AzureDataLake implements INodeType {
 		outputs: ['main'],
 		credentials: [
 			{
-				name: 'azureDataLakeApi',
+				name: 'AzureDataLakeApi',
 				required: true,
 			},
 		],
@@ -24,7 +25,7 @@ export class AzureDataLake implements INodeType {
 			baseURL: 'https://management.azure.com',
 			headers: {
 				Accept: 'application/json',
-				'content-type': 'application/json',
+				'Content-Type': 'application/json',
 			},
 		},
 		properties: [
@@ -73,7 +74,7 @@ export class AzureDataLake implements INodeType {
 					{
 						name: 'Put',
 						value: 'put',
-						action: 'Creates the specified Data Lake Store account.',
+						action: 'Creates the specified data lake store account',
 						routing: {
 							request: {
 								method: 'PUT',
@@ -100,7 +101,7 @@ export class AzureDataLake implements INodeType {
 					{
 						name: 'Delete',
 						value: 'delete',
-						action: 'Deletes the specified Data Lake Store account.',
+						action: 'Deletes the specified data lake store account',
 						routing: {
 							request: {
 								method: 'DELETE',
@@ -127,7 +128,7 @@ export class AzureDataLake implements INodeType {
 					{
 						name: 'Get',
 						value: 'get',
-						action: 'Gets the specified Data Lake Store account.',
+						action: 'Gets the specified data lake store account',
 						routing: {
 							request: {
 								method: 'GET',
@@ -154,7 +155,7 @@ export class AzureDataLake implements INodeType {
 					{
 						name: 'List',
 						value: 'list',
-						action: 'Lists the Data Lake Store accounts within the subscription.',
+						action: 'Lists the data lake store accounts within the subscription',
 						routing: {
 							request: {
 								method: 'GET',
@@ -181,7 +182,7 @@ export class AzureDataLake implements INodeType {
 					{
 						name: 'Patch',
 						value: 'patch',
-						action: 'Updates the specified Data Lake Store account information.',
+						action: 'Updates the specified data lake store account information',
 						routing: {
 							request: {
 								method: 'PATCH',
@@ -192,6 +193,6 @@ export class AzureDataLake implements INodeType {
 				],
 				default: 'patch',
 			},
-
-
-
+		],
+	}
+}

@@ -1,9 +1,9 @@
 {
-	"node": "n8n-nodes-azure-data-lake",
-	"nodeVersion": "0.0.1",
-	"codexVersion": "0.0.1",
+	"node": "n8n-nodes-base.AzureDataLake",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
 	"categories": [
-		"Data & Storage"
+		"Miscellaneous"
 	],
 	"resources": {
 		"credentialsDocumentation": [
@@ -11,10 +11,10 @@
 				"url": ""
 			}
 		],
-		"primaryDocumentation: [
+		"primaryDocumentation": [
 			{
 				"url": ""
 			}
 		]
-	},
+	}
 }

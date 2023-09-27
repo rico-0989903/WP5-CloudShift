@@ -1,7 +1,7 @@
 {
   "name": "n8n-nodes-azure-data-lake",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.1.0",
+  "description": "Azure Data Lake Storage nodes for n8n",
   "keywords": [
     "n8n-community-node-package"
   ],
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "git+https://github.com/Rac-Software-Development/werkplaats-5-cloudshift-n8n-duality.git"
   },
   "main": "index.js",
   "scripts": {
@@ -33,7 +33,7 @@
       "dist/credentials/AzureDataLake.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AzureDataLake.node.js"
+      "dist/nodes/AzureDataLake/AzureDataLake.node.js"
     ]
   },
   "devDependencies": {
