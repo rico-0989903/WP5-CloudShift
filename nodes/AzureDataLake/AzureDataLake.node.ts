@@ -65,9 +65,7 @@ export class AzureDataLake implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: [
-							'create',
-						],
+						resource: ['create'],
 					},
 				},
 				options: [
@@ -92,9 +90,7 @@ export class AzureDataLake implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: [
-							'delete',
-						],
+						resource: ['delete'],
 					},
 				},
 				options: [
@@ -119,9 +115,7 @@ export class AzureDataLake implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: [
-							'get',
-						],
+						resource: ['get'],
 					},
 				},
 				options: [
@@ -146,9 +140,7 @@ export class AzureDataLake implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: [
-							'list',
-						],
+						resource: ['list'],
 					},
 				},
 				options: [
@@ -173,9 +165,7 @@ export class AzureDataLake implements INodeType {
 				noDataExpression: true,
 				displayOptions: {
 					show: {
-						resource: [
-							'update',
-						],
+						resource: ['update'],
 					},
 				},
 				options: [
@@ -194,5 +184,5 @@ export class AzureDataLake implements INodeType {
 				default: 'patch',
 			},
 		],
-	}
+	};
 }
