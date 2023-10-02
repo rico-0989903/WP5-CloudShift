@@ -1,7 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.AzureDataLakeApi = void 0;
-class AzureDataLakeApi {
+exports.AzureDataLake = void 0;
+class AzureDataLake {
 	name: string;
 	displayName: string;
 	documentationUrl: string;
@@ -22,4 +22,4 @@ class AzureDataLakeApi {
 		];
 	}
 }
-exports.AzureDataLakeApi = AzureDataLakeApi;
+exports.AzureDataLake = AzureDataLake;
