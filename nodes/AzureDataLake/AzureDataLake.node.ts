@@ -5,7 +5,7 @@ export class AzureDataLake implements INodeType {
 		displayName: 'Azure Data Lake',
 		name: 'AzureDataLake',
 		// eslint-disable-next-line n8n-nodes-base/node-class-description-icon-not-svg
-		icon: 'file:azureDataLake.png',
+		icon: 'file:Microsoft_Azure.svg',
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

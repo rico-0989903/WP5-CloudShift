@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Rac-Software-Development/werkplaats-5-cloudshift-n8n-duality.git"
+    "url": "https://github.com/Rac-Software-Development/werkplaats-5-cloudshift-n8n-duality.git"
   },
   "main": "index.js",
   "scripts": {
