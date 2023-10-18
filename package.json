@@ -1,19 +1,19 @@
 {
-  "name": "n8n-nodes-azure-data-lake",
+  "name": "n8n-nodes-<...>",
   "version": "0.1.0",
-  "description": "Azure Data Lake Storage nodes for n8n",
+  "description": "",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "https://n8n.io",
+  "homepage": "",
   "author": {
-    "name": "Jelle Benard",
-    "email": "1035608@hr.nl"
+    "name": "",
+    "email": ""
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Rac-Software-Development/werkplaats-5-cloudshift-n8n-duality.git"
+    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
   },
   "main": "index.js",
   "scripts": {
@@ -30,10 +30,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/AzureDataLake.credentials.js"
+      "dist/credentials/SolcCompiler.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AzureDataLake/AzureDataLake.node.js"
+      "dist/nodes/AzureDataLake/SolcCompiler.node.js"
     ]
   },
   "devDependencies": {
