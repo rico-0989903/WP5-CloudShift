@@ -9,8 +9,8 @@ class Etherscan {
 	properties: any;
 
 	constructor() {
-		this.name = 'SoclCompiler'
-		this.displayName = 'Solcjs Compiler'
+		this.name = 'Etherscan'
+		this.displayName = 'Etherscan API'
 		this.documentationUrl =
 			'https://docs.etherscan.io/api-endpoints/contracts#get-contract-source-code-for-verified-contract-source-codes'
 		this.properties = [
