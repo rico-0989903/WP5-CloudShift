@@ -33,7 +33,7 @@
       "dist/credentials/Etherscan.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AzureDataLake/Etherscan.node.js"
+      "dist/nodes/Etherscan/Etherscan.node.js"
     ]
   },
   "devDependencies": {
