@@ -30,7 +30,7 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/Etherscan.credentials.js"
+      "dist/credentials/EtherscanApi.credentials.js"
     ],
     "nodes": [
       "dist/nodes/Etherscan/Etherscan.node.js"
