@@ -46,7 +46,7 @@ export class Etherscan implements INodeType {
 						value: 'getTxHash',
 					},
 				],
-				default: 'getContractABI' ,
+				default: 'getSourceCode' ,
 			},
 			{
 				displayName: 'Operation',

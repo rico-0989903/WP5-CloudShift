@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-base.Etherscan",
+	"node": "n8n-nodes-base.etherscan",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": [
