@@ -63,7 +63,7 @@ export class Etherscan implements INodeType {
 				options: [
 					{
 						name: 'Get',
-						value: 'get',
+						value: 'getContractABI',
 						// eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
 						action: 'Get Contract ABI',
 						description: 'Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract',
@@ -75,8 +75,36 @@ export class Etherscan implements INodeType {
 						},
 					},
 				],
-				default: 'get',
+				default: 'getContractABI',
 			},
+			{
+				displayName: 'Operation',
+				name: 'operation',
+				type: 'options',
+				noDataExpression: true,
+				displayOptions: {
+						show: {
+								resource: [
+										'getSourceCode',
+								],
+						},
+				},
+				options: [
+						{
+								name: 'Get Source Code From Varified Contract',
+								value: 'getSourceCode',
+								action: 'Get source code',
+								description: 'Returns the Solidity source code of a verified smart contract',
+								routing: {
+										request: {
+												method: 'GET',
+												url: '?module=contract&action=getsourcecode&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$node["Etherscan"].credentials.apiKey}}',
+										},
+								},
+						},
+				],
+				default: 'getSourceCode',
+		  },
 			{
 				displayName: 'Operation',
 				name: 'operation',
@@ -92,7 +120,7 @@ export class Etherscan implements INodeType {
 				options: [
 					{
 						name: 'Get',
-						value: 'get',
+						value: 'getTxHash',
 						// eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
 						action: 'Get Tx Hash',
 						description: "Returns a contract's deployer address and transaction hash it was created, up to 5 at a time",
@@ -104,7 +132,7 @@ export class Etherscan implements INodeType {
 						},
 					},
 				],
-				default: 'get',
+				default: 'getTxHash',
 			},
 		]
 	};
