@@ -2,7 +2,7 @@ import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
-		displayName: "Etherscan API",
+		displayName: "Etherscan",
 		name: "Etherscan",
 		icon: "file:Etherscan-logo.svg",
 		group: ['transform'],
@@ -10,7 +10,7 @@ export class Etherscan implements INodeType {
 		subtitle: '={{$parameter["resource"] + \": \" + $parameter["operation"]}}',
 		description: "Query the Etherscan API",
 		defaults: {
-			name: "Etherscan API",
+			name: "Etherscan",
 		},
 		inputs: ["main"],
 		outputs: ["main"],
