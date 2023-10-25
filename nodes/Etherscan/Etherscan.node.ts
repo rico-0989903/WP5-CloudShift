@@ -104,7 +104,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["api_key"]}}',
+								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
 							},
 						},
 					},
