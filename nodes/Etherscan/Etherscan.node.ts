@@ -4,7 +4,7 @@ export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: "Etherscan",
 		name: "Etherscan",
-		icon: "file:Etherscan-logo.svg",
+		icon: "file:etherscan-logo.svg",
 		group: ['transform'],
 		version: 1,
 		subtitle: '={{$parameter["resource"] + \": \" + $parameter["operation"]}}',
