@@ -67,11 +67,11 @@ export class Etherscan implements INodeType {
 			},
 			{
 				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
-				displayName: 'Contact address(es)',
+				displayName: 'Address(es)',
 				name: 'contractaddresses',
 				type: 'string',
 				required: true,
-				description: 'Address for the contract, seperate with commas for multiple',
+				description: 'Address for the contract, seperate with commas for multiple addresses',
 				default: '',
 				displayOptions: {
 					show: {
