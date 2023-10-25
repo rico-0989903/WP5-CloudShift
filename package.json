@@ -6,9 +6,9 @@
     "n8n-community-node-package"
   ],
   "license": "MIT",
-  "homepage": "",
+  "homepage": "https://n8n.io",
   "author": {
-    "name": "Rico de Goede & Jelle Benard",
+    "name": "Jelle Benard",
     "email": "1035608@hr.nl"
   },
   "repository": {
