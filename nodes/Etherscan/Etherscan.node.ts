@@ -27,7 +27,27 @@ export class Etherscan implements INodeType {
 			}
 		},
 		properties: [
-
+			{
+				displayName: 'Contract Actions',
+				name: 'Actions',
+				type: 'options',
+				noDataExpression: true,
+				options: [
+					{
+						name: 'ABI for Varified Contracts',
+						value: 'getContractABI',
+					},
+					{
+						name: 'Get Source Code From Varified Contract',
+						value: 'getSourceCode',
+					},
+					{
+						name: 'Get Contract Creator and Creation Tx Hash',
+						value: 'getTxHash',
+					},
+				],
+				default: 'getContractABI' ,
+			}
 		]
 	};
 }
