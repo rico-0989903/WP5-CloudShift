@@ -1,4 +1,4 @@
-import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription, NodeExecutionWithMetadata, NodeOperationError } from 'n8n-workflow';
+import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -55,7 +55,7 @@ export class Etherscan implements INodeType {
 				type: 'string',
 				required: true,
 				description: 'Address for the contract, seperate with commas for multiple',
-				default: '0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413',
+				default: '',
 			},
 			{
 				displayName: 'Operation',
@@ -79,7 +79,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getabi&address={{$address}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
+								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
 							},
 						},
 					},
@@ -108,7 +108,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getsourcecode&address={{$address.value}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
+								url: '=?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
 							},
 						},
 					},
@@ -137,7 +137,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: `=?module=contract&action=getcontractcreation&contractaddresses={{$addressvalue}}&apikey={{$credentials.authenticatie.properties.qs.api_key]}`,
+								url: '=?module=contract&action=getcontractcreation&contractaddresses={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
 							},
 						},
 					},
@@ -145,33 +145,5 @@ export class Etherscan implements INodeType {
 				default: 'get',
 			},
 		]
-	};
-	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
-		const items = this.getInputData();
-
-		let item: INodeExecutionData;
-		let addressvalue: string;
-
-		for (let index = 0; index < items.length; index++) {
-			try {
-				addressvalue = this.getNodeParameter("address", index, '') as string;
-				item = items[index];
-
-				item.json['addressvalue'] = addressvalue
-			} catch (error) {
-				if (this.continueOnFail()) {
-					items.push({json: this.getInputData(index)[0].json, error, pairedItemd: index});
-				} else {
-					if (error.context) {
-						error.context.index = index;
-						throw error;
-					}
-					throw new NodeOperationError(this.getNode(), error);
-
-				}
-			}
-
-		}
-
 	};
 }
