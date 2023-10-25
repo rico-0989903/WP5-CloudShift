@@ -1,4 +1,4 @@
-import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -56,6 +56,30 @@ export class Etherscan implements INodeType {
 				required: true,
 				description: 'Address for the contract, seperate with commas for multiple',
 				default: '',
+				displayOptions: {
+					show: {
+						resource: [
+							'getContractABI',
+							'getSourceCode',
+						],
+					},
+				},
+			},
+			{
+				// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+				displayName: 'Contact address(es)',
+				name: 'contractaddresses',
+				type: 'string',
+				required: true,
+				description: 'Address for the contract, seperate with commas for multiple',
+				default: '',
+				displayOptions: {
+					show: {
+						resource: [
+							'getTxHash',
+						],
+					},
+				},
 			},
 			{
 				displayName: 'Operation',
@@ -79,7 +103,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
+								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["api_key"]}}',
 							},
 						},
 					},
@@ -108,7 +132,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
+								url: '=?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
 							},
 						},
 					},
@@ -137,7 +161,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getcontractcreation&contractaddresses={{$parameter["address"]}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
+								url: '=?module=contract&action=getcontractcreation&contractaddresses={{$parameter["contractaddresses"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
 							},
 						},
 					},
