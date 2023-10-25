@@ -8,7 +8,7 @@ export class EtherscanApi implements ICredentialType {
 	// eslint-disable-next-line n8n-nodes-base/cred-class-field-name-uppercase-first-char
 	name = 'EtherscanApi';
 	displayName = 'Etherscan API';
-	documentationUrl = 'https://docs.etherscan.io/api-endpoints/contracts#get-contract-source-code-for-verified-contract-source-codes';
+	documentationUrl = 'https://docs.etherscan.io/getting-started/viewing-api-usage-statistics';
 	properties: INodeProperties[] = [
 		{
 			displayName: 'API Key',
