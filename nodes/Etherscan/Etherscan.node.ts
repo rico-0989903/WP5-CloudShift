@@ -1,8 +1,5 @@
-import { INodeType, INodeTypeDescription, LoggerProxy as n8nLogger } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
-const logger = n8nLogger.getInstance();
-
-logger.info('Etherscan node loaded');
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: "Etherscan",
