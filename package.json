@@ -1,5 +1,5 @@
 {
-  "name": "n8n-nodes-<...>",
+  "name": "n8n-nodes-etherscan",
   "version": "0.1.0",
   "description": "",
   "keywords": [
@@ -9,11 +9,11 @@
   "homepage": "",
   "author": {
     "name": "",
-    "email": ""
+    "email": "1035608@hr.nl"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/<...>/n8n-nodes-<...>.git"
+    "url": "https://github.com/Rac-Software-Development/werkplaats-5-cloudshift-n8n-duality.git"
   },
   "main": "index.js",
   "scripts": {
@@ -30,10 +30,10 @@
   "n8n": {
     "n8nNodesApiVersion": 1,
     "credentials": [
-      "dist/credentials/SolcCompiler.credentials.js"
+      "dist/credentials/Etherscan.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AzureDataLake/SolcCompiler.node.js"
+      "dist/nodes/AzureDataLake/Etherscan.node.js"
     ]
   },
   "devDependencies": {
