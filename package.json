@@ -1,14 +1,14 @@
 {
   "name": "n8n-nodes-etherscan",
   "version": "0.1.0",
-  "description": "",
+  "description": "n8n node to interact with the Etherscan API",
   "keywords": [
     "n8n-community-node-package"
   ],
   "license": "MIT",
   "homepage": "",
   "author": {
-    "name": "",
+    "name": "Rico de Goede & Jelle Benard",
     "email": "1035608@hr.nl"
   },
   "repository": {
@@ -33,7 +33,7 @@
       "dist/credentials/Etherscan.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/AzureDataLake/Etherscan.node.js"
+      "dist/nodes/Etherscan/Etherscan.node.js"
     ]
   },
   "devDependencies": {
