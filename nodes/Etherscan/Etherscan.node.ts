@@ -82,25 +82,26 @@ export class Etherscan implements INodeType {
 				type: 'options',
 				noDataExpression: true,
 				displayOptions: {
-						show: {
-								resource: [
-										'getSourceCode',
-								],
-						},
+					show: {
+						resource: [
+							'getSourceCode',
+						],
+					},
 				},
 				options: [
-						{
-								name: 'Get Source Code From Varified Contract',
-								value: 'getSourceCode',
-								action: 'Get source code',
-								description: 'Returns the Solidity source code of a verified smart contract',
-								routing: {
-										request: {
-												method: 'GET',
-												url: '?module=contract&action=getsourcecode&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$node["Etherscan"].credentials.apiKey}}',
-										},
-								},
+					{
+						name: 'Get',
+						value: 'getSourceCode',
+						// eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
+						action: 'Get Source Code',
+						description: 'Returns the Solidity source code of a verified smart contract',
+						routing: {
+							request: {
+								method: 'GET',
+								url: '?module=contract&action=getsourcecode&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$node["Etherscan"].credentials.apiKey}}',
+							},
 						},
+					},
 				],
 				default: 'getSourceCode',
 		  },
