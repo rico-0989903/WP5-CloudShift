@@ -14,8 +14,7 @@ export class Etherscan implements INodeType {
 		outputs: ["main"],
 		credentials: [
 			{
-				// eslint-disable-next-line n8n-nodes-base/node-class-description-credentials-name-unsuffixed
-				name: "Etherscan",
+				name: 'EtherscanApi',
 				required: true,
 			},
 		],
