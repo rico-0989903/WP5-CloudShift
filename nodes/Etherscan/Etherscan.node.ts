@@ -1,5 +1,8 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
+const apiKey = (this.getCredentials('EtherscanApi') as { apiKey: string }).apiKey;
+console.log(apiKey);
+
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: "Etherscan",
