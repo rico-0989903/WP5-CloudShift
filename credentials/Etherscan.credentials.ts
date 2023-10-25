@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.AzureDataLake = void 0;
+exports.Etherscan = void 0;
 
 class Etherscan {
 	name: string;
