@@ -35,15 +35,16 @@ export class Etherscan implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'ABI for Varified Contract',
+						name: 'Get Contract ABI for Verified Contract',
 						value: 'getContractABI',
 					},
 					{
-						name: 'Get Source Code From Varified Contract',
+						name: 'Get Source Code for Verified Contract',
 						value: 'getSourceCode',
 					},
 					{
-						name: 'Get Contract Creator and Creation Tx Hash',
+						// eslint-disable-next-line n8n-nodes-base/node-param-display-name-miscased
+						name: 'Get Contract Creator and create Tx Hash',
 						value: 'getTxHash',
 					},
 				],
@@ -157,7 +158,7 @@ export class Etherscan implements INodeType {
 						value: 'get',
 						// eslint-disable-next-line n8n-nodes-base/node-param-operation-option-action-miscased
 						action: 'Get Tx Hash',
-						description: "Returns a contract's deployer address and transaction hash it was created, up to 5 at a time",
+						description: "Returns a contract's deployer address and transaction hash it was created to, up to 5 at a time",
 						routing: {
 							request: {
 								method: 'GET',
