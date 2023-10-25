@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription, NodeExecutionWithMetadata, NodeOperationError } from 'n8n-workflow';
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -79,7 +79,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getabi&address={{$value}}&apikey={{apiKey}}',
+								url: '=?module=contract&action=getabi&address={{$address}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
 							},
 						},
 					},
@@ -108,7 +108,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getsourcecode&address={{$value}}&apikey={{$node["Etherscan"].credentials.apiKey}}',
+								url: '=?module=contract&action=getsourcecode&address={{$address.value}}&apikey=ZFWG3B37BSXCIP6T6M9TTKJTA3RZJWAJP2',
 							},
 						},
 					},
@@ -137,7 +137,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getcontractcreation&contractaddresses=0xB83c27805aAcA5C7082eB45C868d955Cf04C337F,0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45,0xe4462eb568E2DFbb5b0cA2D3DbB1A35C9Aa98aad,0xdAC17F958D2ee523a2206206994597C13D831ec7,0xf5b969064b91869fBF676ecAbcCd1c5563F591d0&apikey={{$node["Etherscan"].credentials.apiKey}}',
+								url: `=?module=contract&action=getcontractcreation&contractaddresses={{$addressvalue}}&apikey={{$credentials.authenticatie.properties.qs.api_key]}`,
 							},
 						},
 					},
@@ -145,5 +145,33 @@ export class Etherscan implements INodeType {
 				default: 'get',
 			},
 		]
+	};
+	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {
+		const items = this.getInputData();
+
+		let item: INodeExecutionData;
+		let addressvalue: string;
+
+		for (let index = 0; index < items.length; index++) {
+			try {
+				addressvalue = this.getNodeParameter("address", index, '') as string;
+				item = items[index];
+
+				item.json['addressvalue'] = addressvalue
+			} catch (error) {
+				if (this.continueOnFail()) {
+					items.push({json: this.getInputData(index)[0].json, error, pairedItemd: index});
+				} else {
+					if (error.context) {
+						error.context.index = index;
+						throw error;
+					}
+					throw new NodeOperationError(this.getNode(), error);
+
+				}
+			}
+
+		}
+
 	};
 }
