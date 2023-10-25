@@ -50,6 +50,14 @@ export class Etherscan implements INodeType {
 				default: 'getContractABI' ,
 			},
 			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				required: true,
+				description: 'Address for the contract, seperate with commas for multiple',
+				default: '0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413',
+			},
+			{
 				displayName: 'Operation',
 				name: 'operation',
 				type: 'options',
@@ -71,7 +79,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$node["Etherscan"].credentials.apiKey}}',
+								url: '?module=contract&action=getabi&address={{$value}}&apikey={{$node["Etherscan"].credentials.apiKey}}',
 							},
 						},
 					},
