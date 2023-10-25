@@ -104,7 +104,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
+								url: '=?module=contract&action=getabi&address={{$parameter["address"]}}&apikey={{$credentials.apiKey}}',
 							},
 						},
 					},
@@ -133,7 +133,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
+								url: '=?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey={{$credentials.apiKey}}',
 							},
 						},
 					},
@@ -162,7 +162,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '=?module=contract&action=getcontractcreation&contractaddresses={{$parameter["contractaddresses"]}}&apikey={{$credentials["EtherscanApi"]["apiKey"]}}',
+								url: '=?module=contract&action=getcontractcreation&contractaddresses={{$parameter["contractaddresses"]}}&apikey={{$credentials.apiKey}}',
 							},
 						},
 					},
