@@ -49,7 +49,6 @@
   },
   "dependencies": {
     "mythxjs": "^1.3.13",
-    "pino": "^8.16.1",
     "solc-js": "^1.0.1"
   }
 }

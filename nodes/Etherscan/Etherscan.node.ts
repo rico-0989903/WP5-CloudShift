@@ -1,10 +1,5 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 
-const pino = require('pino');
-const logger = pino({ prettyPrint: true });
-
-logger.info('Hello, World!');
-
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: "Etherscan",
