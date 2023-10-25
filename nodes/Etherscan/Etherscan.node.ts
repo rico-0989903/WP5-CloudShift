@@ -1,5 +1,8 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, LoggerProxy as n8nLogger } from 'n8n-workflow';
 
+const logger = n8nLogger.getInstance();
+
+logger.info('Etherscan node loaded');
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: "Etherscan",
@@ -29,6 +32,24 @@ export class Etherscan implements INodeType {
 		},
 		properties: [
 			{
+				displayName: 'Address',
+				name: 'address',
+				type: 'string',
+				default: '',
+				placeholder: 'Adress',
+				description: 'Address of the contract',
+				required: true,
+				displayOptions: {
+					show: {
+						resource: [
+							'getContractABI',
+							'getSourceCode',
+							'getTxHash',
+						],
+					},
+				},
+			},
+			{
 				displayName: 'Resource',
 				name: 'resource',
 				type: 'options',
@@ -47,7 +68,7 @@ export class Etherscan implements INodeType {
 						value: 'getTxHash',
 					},
 				],
-				default: 'getContractABI' ,
+				default: 'getContractABI',
 			},
 			{
 				displayName: 'Operation',
@@ -71,7 +92,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getabi&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$credentials.authenticatie.properties.qs.api_key}}',
+								url: '?module=contract&action=getabi&address={{$parameter["address"]}}&apikey=1ZSSHEN7FPA9IKCUGEGKMAHVMTFYPGMUN5',
 							},
 						},
 					},
@@ -100,7 +121,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getsourcecode&address=0xBB9bc244D798123fDe783fCc1C72d3Bb8C189413&apikey={{$credentials.authenticatie.properties.qs.api_key}}',
+								url: '?module=contract&action=getsourcecode&address={{$parameter["address"]}}&apikey=1ZSSHEN7FPA9IKCUGEGKMAHVMTFYPGMUN5',
 							},
 						},
 					},
@@ -129,7 +150,7 @@ export class Etherscan implements INodeType {
 						routing: {
 							request: {
 								method: 'GET',
-								url: '?module=contract&action=getcontractcreation&contractaddresses=0xB83c27805aAcA5C7082eB45C868d955Cf04C337F,0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45,0xe4462eb568E2DFbb5b0cA2D3DbB1A35C9Aa98aad,0xdAC17F958D2ee523a2206206994597C13D831ec7,0xf5b969064b91869fBF676ecAbcCd1c5563F591d0&apikey={{$credentials.authenticatie.properties.qs.api_key}}',
+								url: '?module=contract&action=getcontractcreation&contractaddresses={{$parameter["address"]}}&apikey=1ZSSHEN7FPA9IKCUGEGKMAHVMTFYPGMUN5',
 							},
 						},
 					},
