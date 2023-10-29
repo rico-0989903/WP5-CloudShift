@@ -6,14 +6,15 @@ The node allows you to retrieve the ABI for varified contracts, get the solidity
 
 [n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-[Installation](#installation)  
-[Operations](#operations)  
-[Credentials](#credentials) 
-[Compatibility](#compatibility)  
-[Usage](#usage)  
-[Resources](#resources)
-[Testing](#testing)  
-[Logging](#logging)
+* [Installation](#installation)  
+* [Operations](#operations)  
+* [Credentials](#credentials) 
+* [Compatibility](#compatibility)  
+* [Usage](#usage)  
+* [Testing](#testing)  
+* [Logging](#logging)
+* [Resources](#resources)	
+* [Limitations](#limitations)
 
 ## Installation
 
