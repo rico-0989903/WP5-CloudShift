@@ -1,47 +1,63 @@
-![Banner image](https://user-images.githubusercontent.com/10284570/173569848-c624317f-42b1-45a6-ab09-f0ea3c247648.png)
+# n8n-nodes-etherscan
 
-# n8n-nodes-starter
+This is an n8n community node. It lets you use Etherscan contracts in your n8n workflows.
 
-This repo contains example nodes to help you get started building your own custom integrations for [n8n](n8n.io). It includes the node linter and other dependencies.
+The node allows you to retrieve the ABI for varified contracts, get the solidity Source Code of varified contracts and allows you to to retrieve the contract creator and the Tx Hash.
 
-To make your custom node available to the community, you must create it as an npm package, and [submit it to the npm registry](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry).
+[n8n](https://n8n.io/) is a [fair-code licensed](https://docs.n8n.io/reference/license/) workflow automation platform.
 
-## Prerequisites
+[Installation](#installation)  
+[Operations](#operations)  
+[Credentials](#credentials) 
+[Compatibility](#compatibility)  
+[Usage](#usage)  
+[Resources](#resources)  
 
-You need the following installed on your development machine:
+## Installation
 
-* [git](https://git-scm.com/downloads)
-* Node.js and npm. Minimum version Node 16. You can find instructions on how to install both using nvm (Node Version Manager) for Linux, Mac, and WSL [here](https://github.com/nvm-sh/nvm). For Windows users, refer to Microsoft's guide to [Install NodeJS on Windows](https://docs.microsoft.com/en-us/windows/dev-environment/javascript/nodejs-on-windows).
-* Install n8n with:
-	```
-	npm install n8n -g
-	```
-* Recommended: follow n8n's guide to [set up your development environment](https://docs.n8n.io/integrations/creating-nodes/build/node-development-environment/).
+Follow the [installation guide](https://docs.n8n.io/integrations/community-nodes/installation/) in the n8n community nodes documentation.
+
+## Operations
+
+### Retrieve ABI for Varified Contracts ###
+Returns the Contract Application Binary Interface ( ABI ) of a verified smart contract. 
+This requires the address of the contract.
+
+### Get Solidity Source Code for Varified Contract ###
+Returns the Solidity source code of a verified smart contract.
+This requires the address of the contract.
+
+### Get Contract Creator and Creation Tx Hash ###
+Returns a contract's deployer address and transaction hash it was created.
+This requires up to five addresses.
+
+## Credentials
+
+To use these services an API key is required which requires an account on [Etherscan](etherscan.io).
+On the [Etherscan website](etherscan.io) hover over your name and in the dropdown menu select "API Keys".
+Here the API Key can be copied. __WARNING__ there is a limit on the amount of queries on the free version.
+The allow for more queries per second you should upgrade your account.
 
 
-## Using this starter
+## Compatibility
 
-These are the basic steps for working with the starter. For detailed guidance on creating and publishing nodes, refer to the [documentation](https://docs.n8n.io/integrations/creating-nodes/).
+This node has been tested on version 1.7.1 and deemed functional
 
-1. [Generate a new repository](https://github.com/n8n-io/n8n-nodes-starter/generate) from this template repository.
-2. Clone your new repo:
-    ```
-    git clone https://github.com/<your organization>/<your-repo-name>.git
-    ```
-3. Run `npm i` to install dependencies.
-4. Open the project in your editor.
-5. Browse the examples in `/nodes` and `/credentials`. Modify the examples, or replace them with your own nodes.
-6. Update the `package.json` to match your details.
-7. Run `npm run lint` to check for errors or `npm run lintfix` to automatically fix errors when possible.
-8. Test your node locally. Refer to [Run your node locally](https://docs.n8n.io/integrations/creating-nodes/test/run-node-locally/) for guidance.
-9. Replace this README with documentation for your node. Use the [README_TEMPLATE](README_TEMPLATE.md) to get started.
-10. Update the LICENSE file to use your details.
-11. [Publish](https://docs.npmjs.com/packages-and-modules/contributing-packages-to-the-registry) your package to npm.
+## Usage
 
-## More information
+### Retrieve ABI for Varified Contracts ###
+This requires the address of the contract.
 
-Refer to our [documentation on creating nodes](https://docs.n8n.io/integrations/creating-nodes/) for detailed information on building your own nodes.
+### Get Solidity Source Code for Varified Contract ###
+This requires the address of the contract.
 
-## License
+### Get Contract Creator and Creation Tx Hash ###
+This requires at least one address and up to five addresses of contracts.
 
-[MIT](https://github.com/n8n-io/n8n-nodes-starter/blob/master/LICENSE.md)
+## Resources
+
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+* [Etherscan API documatation on contracts](https://docs.etherscan.io/api-endpoints/contracts)
+
+
+
