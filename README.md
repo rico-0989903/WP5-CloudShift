@@ -84,5 +84,11 @@ Full documentation on how to achieve this can be found [here](https://docs.n8n.i
 * [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
 * [Etherscan API documatation on contracts](https://docs.etherscan.io/api-endpoints/contracts)
 
+## Limitations
 
+### API endpoints
+Currently, the node only supports API calls to the Etherscan API for contracts.
+It does not support API calls for endpoints like transactions, accounts or tokens as of yet, but this may be added in the future.
 
+### Etherscan API PRO endpoints
+Also, some API endpoints can only be accessed with Etherscan API PRO. This node does not support paid API calls.
