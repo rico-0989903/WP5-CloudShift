@@ -2,13 +2,27 @@ import { INodeType, INodeTypeDescription } from 'n8n-workflow';
 import winston from 'winston';
 import path from 'path';
 
+const os = require('os');
+
+const userHomeDir = os.homedir();
+const logFolderPath = path.join(userHomeDir, '.n8n', 'logs');
+
 const logger = winston.createLogger({
 	level: 'debug',
-	format: winston.format.json(),
+	format: winston.format.combine(
+		winston.format.timestamp({
+			format: 'YYYY-MM-DD HH:mm:ss',
+		}),
+		winston.format.printf((info) => {
+			return `(Time: ${info.timestamp}, Level: ${info.level}) Message: ${info.message}`;
+		})
+	),
 	transports: [
-		new winston.transports.File({ filename: path.join('C:\\Users\\benar\\.n8n\\logs', 'Etherscan.node.log') }),
+		new winston.transports.File({ filename: path.join(logFolderPath, 'Etherscan.node.log') }),
 	],
 });
+
+logger.info('Initializing Etherscan node');
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -181,15 +195,12 @@ export class Etherscan implements INodeType {
 			},
 		]
 	};
-
-	async execute() {
-		logger.info('Etherscan node executed');
-		try {
-			return await this.query();
-		} catch (error) {
-			logger.error('error occured: ', error);
-			throw error;
-		}
-	}
 }
 
+// the next few lines will check is loaded in n8n correctly. if it succeeds, it will create a log message on info level, if not it will throw an error
+try {
+	logger.info('Etherscan node loaded successfully');
+} catch (e) {
+	logger.error(`Etherscan node could not be loaded: ${e.message}`);
+	throw e;
+}
