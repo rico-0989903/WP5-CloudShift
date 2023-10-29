@@ -197,7 +197,6 @@ export class Etherscan implements INodeType {
 	};
 }
 
-// the next few lines will check is loaded in n8n correctly. if it succeeds, it will create a log message on info level, if not it will throw an error
 try {
 	logger.info('Etherscan node loaded successfully');
 } catch (e) {
