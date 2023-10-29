@@ -66,6 +66,9 @@ To test the API, Etherscan has provided verified contract addresses, including:
 * 0xdAC17F958D2ee523a2206206994597C13D831ec7,
 * 0xf5b969064b91869fBF676ecAbcCd1c5563F591d0
 
+Using this address ( or multiple for the Tx Hash function ) should always come back with a proper response.
+You can test this by adding the node to a workflow and pasting one ( or multiple for the Tx Hash ) of the addresses in the "**address(es)**" parameter field.
+
 A full list of verified contracts can be found on Etherscan's [verified contracts page](https://etherscan.io/contractsVerified)
 
 ## Logging
