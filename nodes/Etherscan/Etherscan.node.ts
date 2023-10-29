@@ -1,4 +1,14 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import winston from 'winston';
+import path from 'path';
+
+const logger = winston.createLogger({
+	level: 'debug',
+	format: winston.format.json(),
+	transports: [
+		new winston.transports.File({ filename: path.join('C:\\Users\\benar\\.n8n\\logs', 'Etherscan.node.log') }),
+	],
+});
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -171,4 +181,15 @@ export class Etherscan implements INodeType {
 			},
 		]
 	};
+
+	async execute() {
+		logger.info('Etherscan node executed');
+		try {
+			return await this.query();
+		} catch (error) {
+			logger.error('error occured: ', error);
+			throw error;
+		}
+	}
 }
+
