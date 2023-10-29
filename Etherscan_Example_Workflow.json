@@ -1,0 +1,104 @@
+{
+  "name": "Telegram Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "resource": "getTxHash",
+        "contractaddresses": "0xB83c27805aAcA5C7082eB45C868d955Cf04C337F"
+      },
+      "id": "8610c3e1-726a-40fa-99b9-cde9f9bf3abd",
+      "name": "Etherscan",
+      "type": "n8n-nodes-etherscan.Etherscan",
+      "typeVersion": 1,
+      "position": [
+        1020,
+        600
+      ],
+      "credentials": {
+        "EtherscanApi": {
+          "id": "8Jq6FGX1F6uP9SlM",
+          "name": "EtherscanKey"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "6321005380",
+        "text": "=Contract Address:\n{{ $json.result[0].contractAddress }}\n\nContract Creator:\n{{ $json.result[0].contractCreator }}\n\nTx Hash:\n{{ $json.result[0].txHash }}",
+        "additionalFields": {}
+      },
+      "id": "bb56d08f-5582-43c8-a86e-29b2757606d0",
+      "name": "Telegram",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "position": [
+        1240,
+        600
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "HOiV80w6X0B7R3S4",
+          "name": "TelegramBot"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "id": "e742a832-7402-4f59-87fe-eed50d83535b",
+      "name": "Telegram Trigger",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1,
+      "position": [
+        820,
+        600
+      ],
+      "webhookId": "27e49e1d-8b09-4d5e-b985-71ecd633d81f",
+      "credentials": {
+        "telegramApi": {
+          "id": "HOiV80w6X0B7R3S4",
+          "name": "TelegramBot"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Etherscan": {
+      "main": [
+        [
+          {
+            "node": "Telegram",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Etherscan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1a765b77-6a4a-4d5e-9875-fe96a0534759",
+  "id": "6WPM7izI35cNLVig",
+  "meta": {
+    "instanceId": "9bdf6a55684fcf188835a3c4a12e4e1dba67dd741f9eab4b9d7de413ae309ea3"
+  },
+  "tags": []
+}
