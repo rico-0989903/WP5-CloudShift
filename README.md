@@ -59,16 +59,22 @@ This requires at least one address and up to five addresses of contracts.
 ## Testing
 To test the API, Etherscan has provided verified contract addresses, including:
 
-0xB83c27805aAcA5C7082eB45C868d955Cf04C337F
-0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45
-0xe4462eb568E2DFbb5b0cA2D3DbB1A35C9Aa98aad
-0xdAC17F958D2ee523a2206206994597C13D831ec7
-0xf5b969064b91869fBF676ecAbcCd1c5563F591d0
+* 0xB83c27805aAcA5C7082eB45C868d955Cf04C337F,
+* 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45,
+* 0xe4462eb568E2DFbb5b0cA2D3DbB1A35C9Aa98aad,
+* 0xdAC17F958D2ee523a2206206994597C13D831ec7,
+* 0xf5b969064b91869fBF676ecAbcCd1c5563F591d0
 
 A full list of verified contracts can be found on Etherscan's [verified contracts page](https://etherscan.io/contractsVerified)
 
 ## Logging
 If you are hosting n8n yourself the log files can be found in your global instance folder (.n8n folder).
+
+Our node also supports logging, to find the logging files you have to create the folder "**logs**"
+Our node allows for minimal logging, our node logs:
+
+INFO: Initialisation of the node
+ERROR: Any occurring errors during intialisation
 
 If you would like more extensive logging this has to be done through the config file in your local instance
 Full documentation on how to achieve this can be found [here](https://docs.n8n.io/hosting/logging-monitoring/logging/#setup).
