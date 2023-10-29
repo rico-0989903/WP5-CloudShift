@@ -11,9 +11,10 @@ The node allows you to retrieve the ABI for varified contracts, get the solidity
 [Credentials](#credentials) 
 [Compatibility](#compatibility)  
 [Usage](#usage)  
-[Resources](#resources)
-[Testing](#testing)  
+[Testing](#testing)
 [Logging](#logging)
+[Limitations](#limitations)
+[Resources](#resources) 
 
 ## Installation
 
@@ -79,11 +80,6 @@ ERROR: Any occurring errors during intialisation
 If you would like more extensive logging this has to be done through the config file in your local instance
 Full documentation on how to achieve this can be found [here](https://docs.n8n.io/hosting/logging-monitoring/logging/#setup).
 
-## Resources
-
-* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
-* [Etherscan API documatation on contracts](https://docs.etherscan.io/api-endpoints/contracts)
-
 ## Limitations
 
 ### API endpoints
@@ -92,3 +88,8 @@ It does not support API calls for endpoints like transactions, accounts or token
 
 ### Etherscan API PRO endpoints
 Also, some API endpoints can only be accessed with Etherscan API PRO. This node does not support paid API calls.
+
+## Resources
+
+* [n8n community nodes documentation](https://docs.n8n.io/integrations/community-nodes/)
+* [Etherscan API documatation on contracts](https://docs.etherscan.io/api-endpoints/contracts)
