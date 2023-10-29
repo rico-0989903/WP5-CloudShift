@@ -1,4 +1,28 @@
 import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import winston from 'winston';
+import path from 'path';
+
+const os = require('os');
+
+const userHomeDir = os.homedir();
+const logFolderPath = path.join(userHomeDir, '.n8n', 'logs');
+
+const logger = winston.createLogger({
+	level: 'debug',
+	format: winston.format.combine(
+		winston.format.timestamp({
+			format: 'YYYY-MM-DD HH:mm:ss',
+		}),
+		winston.format.printf((info) => {
+			return `(Time: ${info.timestamp}, Level: ${info.level}) Message: ${info.message}`;
+		})
+	),
+	transports: [
+		new winston.transports.File({ filename: path.join(logFolderPath, 'Etherscan.node.log') }),
+	],
+});
+
+logger.info('Initializing Etherscan node');
 
 export class Etherscan implements INodeType {
 	description: INodeTypeDescription = {
@@ -171,4 +195,11 @@ export class Etherscan implements INodeType {
 			},
 		]
 	};
+}
+
+try {
+	logger.info('Etherscan node loaded successfully');
+} catch (e) {
+	logger.error(`Etherscan node could not be loaded: ${e.message}`);
+	throw e;
 }
