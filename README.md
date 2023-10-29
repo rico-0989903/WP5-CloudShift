@@ -57,7 +57,7 @@ This requires the address of the contract.
 This requires at least one address and up to five addresses of contracts.
 
 ## Testing
-To test the API etherscan has provided verified contract addresses, including:
+To test the API, Etherscan has provided verified contract addresses, including:
 
 0xB83c27805aAcA5C7082eB45C868d955Cf04C337F
 0x68b3465833fb72A70ecDF485E0e4C7bD8665Fc45
