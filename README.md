@@ -8,13 +8,13 @@ The node allows you to retrieve the ABI for varified contracts, get the solidity
 
 [Installation](#installation)  
 [Operations](#operations)  
-[Credentials](#credentials) 
+[Credentials](#credentials)  
 [Compatibility](#compatibility)  
 [Usage](#usage)  
-[Testing](#testing)
-[Logging](#logging)
-[Limitations](#limitations)
-[Resources](#resources) 
+[Testing](#testing)  
+[Logging](#logging)  
+[Limitations](#limitations)  
+[Resources](#resources)  
 
 ## Installation
 
